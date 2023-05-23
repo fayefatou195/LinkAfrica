@@ -1,3 +1,6 @@
+<x-app-layout>
+    <x-slot name="header">
+     </x-slot>
 <x-guest-layout>
 <div class="py-12">
 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -9,7 +12,7 @@
    <section class="form" >
     
 
-       <h1 class="text-4xl text-blue-800">Entrez l'URL à raccourcir</h1>
+       <h1 class="text-4xl text-blue-800">ENTREZ L'URL A RACCOURCIR</h1>
        @if (session('success_message'))
            {!! session('success_message') !!}
        @endif
@@ -28,18 +31,13 @@
            @error('original_url')
            <span class="text-red-400 m-2 p-2">{{ $message}}</span>
            @enderror
-           <button class="m-2 px-6 py-2 bg-blue-400 hover:bg-blue-300 rounded-lg" type="submit">Raccourcir l'URL</button>
+           <button class="btn btn-primary btn-ms" type="submit">Racourcir L'URL</button></button>
+           
 
-       
-
-         
-
-
-       </form>
-       <button class="m-2 px-6 py-2 bg-blue-400 hover:bg-blue-300 rounded-lg fs-5" type="submit" >  
-          <a href="{{ route('user.links') }}" id="links">Voir plus de détails sur les liens et le nombre de visiteurs</a>
-        </button> 
-
+         </form>
+    
+         <h2 class="text-4xl text-blue-800">Voici l'URL raccourci:</h2>
+    
       <style>
         .form{
           background-color:	#f0f8ff;
@@ -61,7 +59,8 @@
                 
        </div>
      </div>
-    </div>
+ </div>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script> 
 </x-guest-layout>
+</x-app-layout>
